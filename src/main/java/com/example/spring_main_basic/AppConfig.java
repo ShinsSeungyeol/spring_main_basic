@@ -17,25 +17,30 @@ import org.springframework.context.annotation.Configuration;
  * 생성자를 통해서 주입 해준다.
  * 의존관계에 대한 고민은 외부에 맡기고 실행에만 집중한다.
  */
+
 @Configuration
 public class AppConfig {
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy() {
+        System.out.println("call AppConfig.discountPolicy");
         return new RateDiscountPolicy();
     }
 }
