@@ -10,7 +10,9 @@ import com.example.spring_main_basic.member.MemoryMemberRepository;
 import com.example.spring_main_basic.order.OrderService;
 import com.example.spring_main_basic.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * 애플리케이션의 실제 동작에 필요한 구현 객체를 생성한다.
